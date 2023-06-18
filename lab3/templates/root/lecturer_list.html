@@ -1,0 +1,25 @@
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th>工号</th>
+        <th>姓名</th>
+        <th>主讲学时</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in list_content %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" id="{{ rel_PK }}"
+                        data-id="{{ row[0] }}" onclick="lecturerDelete(this)">
+                    删除
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    {#    导入框架的css#}
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+{% if login_msg %}
+    <div class="container mt-3">
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>失败!</strong> {{ login_msg }}
+        </div>
+    </div>
+{% endif %}
+
+<form style="width: 400px;margin: 100px auto" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">用户名</label>
+        <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" name="username">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">密码</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">记住我</label>
+    </div>
+    <button type="submit" class="btn btn-primary">登录</button>
+</form>
+</body>
+</html>

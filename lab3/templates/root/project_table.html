@@ -1,0 +1,37 @@
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th>项目号</th>
+        <th>项目名称</th>
+        <th>项目来源</th>
+        <th>项目类型</th>
+        <th>总经费</th>
+        <th>开始年份</th>
+        <th>结束年份</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in table_content %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ proj_type[row[3]] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#editModal" data-id="{{ row[0] }}" onclick="tryEdit(this)">
+                    编辑
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal" data-id="{{ row[0] }}" onclick="tryDelete(this)">
+                    删除
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
